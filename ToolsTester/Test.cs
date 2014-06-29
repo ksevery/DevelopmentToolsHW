@@ -7,11 +7,19 @@
     using log4net.Core;
     using log4net.Layout;
 
-    class Test
+    public class Test
     {
+        /// <summary>
+        /// The logger - used for any kind of logging. Requires configuration.
+        /// </summary>
         private static readonly ILog log = LogManager.GetLogger(typeof(Test));
-        static void Main ()
+
+        /// <summary>
+        /// Main method. Calls executables. Not to be used for logic implementation.
+        /// </summary>
+        public static void Main ()
         {
+            
             var fileAppender = new FileAppender();
             fileAppender.File = "../../log.txt";
             fileAppender.AppendToFile = true;
